@@ -1,0 +1,102 @@
+[
+    {
+      "id": 1,
+      "iconName": "Linkedin",
+      "iconLink": "https://i.ibb.co/Jx0DhdS/linkedin.png"
+    },
+    {
+      "id": 2,
+      "iconName": "Google",
+      "iconLink": "https://i.ibb.co/V3gbw6J/google.png"
+    },
+    {
+      "id": 3,
+      "iconName": "Acrobat",
+      "iconLink": "https://i.ibb.co/F45vPs5/acrobat.png"
+    },
+    {
+      "id": 4,
+      "iconName": "Google Map",
+      "iconLink": "https://i.ibb.co/fdN227x/map-marker.png"
+    },
+    {
+      "id": 5,
+      "iconName": "Airbnb",
+      "iconLink": "https://i.ibb.co/pv8NBhN/airbnb.png"
+    },
+    {
+      "id": 6,
+      "iconName": "Apple",
+      "iconLink": "https://i.ibb.co/71zxzvj/apple.png"
+    },
+    {
+      "id": 7,
+      "iconName": "Behance",
+      "iconLink": "https://i.ibb.co/ryQtNSD/behance.png"
+    },
+    {
+      "id": 8,
+      "iconName": "Bitcoin",
+      "iconLink": "https://i.ibb.co/qxDxfbx/bitcoin.png"
+    },
+    {
+      "id": 9,
+      "iconName": "Pinterest",
+      "iconLink": "https://i.ibb.co/b1pLYMQ/pinterest.png"
+    },
+    {
+      "id": 10,
+      "iconName": "Crown",
+      "iconLink": "https://i.ibb.co/HxdtCTp/crown.png"
+    },
+    {
+      "id": 11,
+      "iconName": "Telegram",
+      "iconLink": "https://i.ibb.co/GdM35xH/telegram.png"
+    },
+    {
+      "id": 12,
+      "iconName": "Discord",
+      "iconLink": "https://i.ibb.co/RTbd4tP/discord.png"
+    },
+    {
+      "id": 13,
+      "iconName": "Tik-Tok",
+      "iconLink": "https://i.ibb.co/3SwKy72/tik-tok.png"
+    },
+    {
+      "id": 14,
+      "iconName": "Facebook",
+      "iconLink": "https://i.ibb.co/kMRD999/facebook.png"
+    },
+    {
+      "id": 15,
+      "iconName": "Twitter",
+      "iconLink": "https://i.ibb.co/hfnQLPP/twitter.png"
+    },
+    {
+      "id": 16,
+      "iconName": "Flame",
+      "iconLink": "https://i.ibb.co/8bVsJRt/flame.png"
+    },
+    {
+      "id": 17,
+      "iconName": "VK",
+      "iconLink": "https://i.ibb.co/kmv495d/vk.png"
+    },
+    {
+      "id": 18,
+      "iconName": "Github",
+      "iconLink": "https://i.ibb.co/JW1mSLb/github.png"
+    },
+    {
+      "id": 19,
+      "iconName": "Whatsapp",
+      "iconLink": "https://i.ibb.co/LpQRPgp/whatsapp.png"
+    },
+    {
+      "id": 20,
+      "iconName": "Iinstagram",
+      "iconLink": "https://i.ibb.co/wKDSkf0/instagram.png"
+    }
+  ]
