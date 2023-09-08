@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 
-const BrandIconCard = ({brandIcon}) => {
-    const {iconLink,iconName,_id} = brandIcon;
+
+const ClassicIconCard = ({ classicIcon }) => {
+    const { iconLink, iconName, _id } = classicIcon;
+
     const [state, setState] = useState(false);
 
     const handleClickOpen = () => {
@@ -12,10 +14,32 @@ const BrandIconCard = ({brandIcon}) => {
         setState(false);
         console.log('false')
     };
-    return (
-<>
 
-<div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
+    const download = e => {
+        e.preventDefault();
+        fetch(e.target.href, {
+          method: "GET",
+          headers: {}
+        })
+          .then(response => {
+            response.arrayBuffer().then(function(buffer) {
+              const url = window.URL.createObjectURL(new Blob([buffer]));
+              const link = document.createElement("a");
+              link.href = url;
+              link.setAttribute("download", "icon.png"); //or any other extension
+              document.body.appendChild(link);
+              link.click();
+            });
+          })
+          .catch(err => {
+            console.log(err);
+          });
+      };
+
+    return (
+        <>
+
+            <div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
                 {/*  <!-- Icon --> */}
                 <figure className="p-8 pb-0">
                     <img className='w-[30%] mx-auto' src={iconLink} alt="" />
@@ -59,8 +83,8 @@ const BrandIconCard = ({brandIcon}) => {
 
 
 
-                                    <div className="w-[70%] rounded-lg border border-blue-300 mx-auto overflow-hidden p-6 pb-0 text-center bg-white  shadow-md text-slate-500 shadow-slate-200">
-                                        <div>
+                                    <div className="w-[70%]  rounded-lg border border-blue-300 mx-auto overflow-hidden p-6 pb-0 text-center bg-white  shadow-md text-slate-500 shadow-slate-200">
+                                        <div className='flex justify-around mt-4'>
                                             <button className="inline-flex h-12 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded bg-blue-50 px-6 text-sm font-medium tracking-wide text-blue-500 shadow-lg shadow-blue-100 transition duration-300 hover:bg-blue-100 hover:text-blue-600 hover:shadow-md hover:shadow-blue-100 focus:bg-blue-200 focus:text-blue-700 focus:shadow-md focus:shadow-blue-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-100 disabled:text-blue-400 disabled:shadow-none">
                                                 <span>Large</span>
                                             </button>
@@ -68,7 +92,15 @@ const BrandIconCard = ({brandIcon}) => {
                                                 <span>Extra large</span>
                                             </button>
                                         </div>
-                                        <div>
+                                        <div className=''>
+                                        <div
+        className="w-full mt-4 px-2 py-2 text-sm border rounded border-cyan-100 bg-cyan-50 text-cyan-500"
+        role="alert"
+      >
+        <p className='text-lg'>{iconName}  -Icon</p>
+      </div>
+                                            
+                                           <a target='_blank' onClick={e => download(e)} href={`${iconLink}`}>Download</a>
 
                                         </div>
 
@@ -82,15 +114,11 @@ const BrandIconCard = ({brandIcon}) => {
                     </div>
                 </div>
             ) : ''}
-  
-</>
 
 
 
-
-
-        
+        </>
     );
 };
 
-export default BrandIconCard;
+export default ClassicIconCard;

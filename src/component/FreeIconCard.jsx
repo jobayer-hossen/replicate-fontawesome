@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-const BrandIconCard = ({brandIcon}) => {
-    const {iconLink,iconName,_id} = brandIcon;
+const FreeIconCard = ({freeIcon}) => {
+    const { iconLink, iconName, _id } = freeIcon;
+
     const [state, setState] = useState(false);
 
     const handleClickOpen = () => {
@@ -13,16 +14,17 @@ const BrandIconCard = ({brandIcon}) => {
         console.log('false')
     };
     return (
-<>
+        <>
+
 
 <div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
                 {/*  <!-- Icon --> */}
                 <figure className="p-8 pb-0">
-                    <img className='w-[30%] mx-auto' src={iconLink} alt="" />
+                    <img className='w-[40%] mx-auto' src={iconLink} alt="" />
                 </figure>
                 {/*  <!-- Body--> */}
                 <div className="p-4">
-                    <h3 className="mb-4 text-lg font-medium text-slate-700">{iconName}</h3>
+                    <h3 className="mb-4 font-medium text-slate-700">{iconName}</h3>
                 </div>
             </div>
 
@@ -30,10 +32,10 @@ const BrandIconCard = ({brandIcon}) => {
 
             {state ? (
                 <div className="fixed inset-0 z-10  ">
-                    <div className="fixed inset-0 w-full h-full" ></div>
+                    <div className="fixed inset-0 w-full h-full " ></div>
 
                     <div className="flex items-center min-h-screen px-4 py-8 w-[80%] mx-auto">
-                        <div className="relative p-4 mx-auto bg-white rounded-md shadow-lg">
+                        <div className="relative p-4 mx-auto bg-blue-50 rounded-md shadow-lg">
 
                             <div className="flex justify-between">
                                 <h4 className="text-2xl font-semibold text-gray-800">
@@ -60,7 +62,7 @@ const BrandIconCard = ({brandIcon}) => {
 
 
                                     <div className="w-[70%] rounded-lg border border-blue-300 mx-auto overflow-hidden p-6 pb-0 text-center bg-white  shadow-md text-slate-500 shadow-slate-200">
-                                        <div>
+                                    <div>
                                             <button className="inline-flex h-12 items-center justify-center gap-2 justify-self-center whitespace-nowrap rounded bg-blue-50 px-6 text-sm font-medium tracking-wide text-blue-500 shadow-lg shadow-blue-100 transition duration-300 hover:bg-blue-100 hover:text-blue-600 hover:shadow-md hover:shadow-blue-100 focus:bg-blue-200 focus:text-blue-700 focus:shadow-md focus:shadow-blue-100 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-blue-300 disabled:bg-blue-100 disabled:text-blue-400 disabled:shadow-none">
                                                 <span>Large</span>
                                             </button>
@@ -82,15 +84,12 @@ const BrandIconCard = ({brandIcon}) => {
                     </div>
                 </div>
             ) : ''}
-  
-</>
 
 
 
 
-
-        
+        </>
     );
 };
 
-export default BrandIconCard;
+export default FreeIconCard;

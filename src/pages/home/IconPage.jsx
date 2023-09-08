@@ -1,17 +1,36 @@
 import React, { useState, useRef, useEffect }  from 'react';
-import ReactDOM from "react-dom"
-import { FaFontAwesomeFlag } from "react-icons/fa";
 import BrandIconCard from '../../component/BrandIconCard';
+import ClassicIconCard from '../../component/ClassicIconCard';
+import FreeIconCard from '../../component/FreeIconCard';
+import { GiClassicalKnowledge , GiSwordBrandish } from "react-icons/gi";
+import { AiFillThunderbolt} from "react-icons/ai";
+import { LuLayoutList } from "react-icons/lu";
+import { BsColumnsGap } from "react-icons/bs";
 
 const IconPage = () => {
 
     const [brand, setBrand] = useState([])
 
-    useEffect(() => {
-        fetch("/brand.json")
-          .then((res) => res.json())
-          .then((data) => setBrand(data));
-      }, []);
+    useEffect(()=>{
+        fetch("http://localhost:8000/brandIcon")
+        .then((res) => res.json())
+        .then((data)=> setBrand(data))
+    },[]);
+
+    const [classic, setClassic] = useState([])
+
+    useEffect(()=>{
+        fetch("http://localhost:8000/classicIcon")
+        .then((res) => res.json())
+        .then((data)=> setClassic(data))
+    },[]);
+    const [free, setFree] = useState([])
+
+    useEffect(()=>{
+        fetch("http://localhost:8000/freeIcon")
+        .then((res) => res.json())
+        .then((data)=> setFree(data))
+    },[]);
 
     const [tabSelected, setTabSelected] = useState({
         currentTab: 1,
@@ -139,11 +158,30 @@ const IconPage = () => {
       }, [isShowing])
 
 
+      const [foreColumn,setForeColumn] = useState(true)
+      const [sixColumn,setSixColumn] = useState(false)
+
+      const handleAddForeColumn =()=>{
+        setForeColumn(true)
+      }
+      const handleRemoveForeColumn =()=>{
+        setForeColumn(false)
+      }
+
+      const handleAddSixColumn =()=>{
+        setSixColumn(true)
+        
+      }
+
+console.log(sixColumn)
     return (
     <>
 
+<div className="mt-5 mb-5">
      {/*<!-- Component: Basic lg sized tab --> */}
-      <section className="w-[70%] mx-auto" aria-multiselectable="false">
+    
+     <section className="relative w-[70%] mx-auto bg-white" aria-multiselectable="false">
+     {/* <div className="absolute rounded-full  lg:w-72 lg:h-72 sm:w-[10%] sm:h-[10%] bg-lime-500 filter blur-xl mix-blend-multiply opacity-75 "></div> */}
         <ul
           className="flex items-center border-b border-slate-200"
           role="tablist"
@@ -167,7 +205,8 @@ const IconPage = () => {
               }`}
               onClick={() => setTabSelected({ ...tabSelected, currentTab: 1 })}
             >
-              <span>Classic</span>
+              <GiClassicalKnowledge/>
+              <span className='text-lg'>Classic</span>
             </button>
           </li>
           <li className="" role="presentation">
@@ -188,7 +227,8 @@ const IconPage = () => {
               }`}
               onClick={() => setTabSelected({ ...tabSelected, currentTab: 2 })}
             >
-              <span>Brand</span>
+              <GiSwordBrandish/>
+              <span className='text-lg'>Brand</span>
             </button>
           </li>
           <li className="" role="presentation">
@@ -209,9 +249,31 @@ const IconPage = () => {
               }`}
               onClick={() => setTabSelected({ ...tabSelected, currentTab: 3 })}
             >
-              <span>Free</span>
+              <AiFillThunderbolt/>
+              <span className='text-lg'>Free</span>
             </button>
           </li>
+          <li className="" role="presentation">
+            <button
+              className='-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-blue-50 hover:stroke-blue-600 focus:bg-blue-50 focus-visible:outline-none disabled:cursor-not-allowed '
+              
+              onClick={() => handleAddForeColumn(true)}
+            >
+              <BsColumnsGap/>
+              <span className='text-lg'>4 Column</span>
+            </button>
+          </li>
+          <li className="" role="presentation">
+            <button
+              className='-mb-px inline-flex h-12 w-full items-center justify-center gap-2 whitespace-nowrap rounded-t border-b-2 px-6 text-sm font-medium tracking-wide transition duration-300 hover:bg-blue-50 hover:stroke-blue-600 focus:bg-blue-50 focus-visible:outline-none disabled:cursor-not-allowed '
+              
+              onClick={() => handleRemoveForeColumn(false)}
+            >
+              <LuLayoutList/>
+              <span className='text-lg'>2 Column</span>
+            </button>
+          </li>
+          
         </ul>
         <div className="">
           <div
@@ -224,13 +286,16 @@ const IconPage = () => {
             aria-labelledby="tab-label-1a"
             tabindex="-1"
           >
-        <div className='grid lg:grid-cols-4 sm:grid-cols-2 '>
+        <div className={`grid gap-10 ${foreColumn ? 'grid-cols-4' : 'grid-cols-2' }
+        `}>
+
         {
-            brand.map(brandIcon=> <BrandIconCard 
-            key={brandIcon.id}
-            brandIcon={brandIcon}
+            free?.map(freeIcon=> <FreeIconCard
+            key={freeIcon._id}
+            freeIcon={freeIcon}
             /> )
         }
+        
         </div>
           </div>
           <div
@@ -243,13 +308,15 @@ const IconPage = () => {
             aria-labelledby="tab-label-2a"
             tabindex="-1"
           >
-            <p>
-              One must be entirely sensitive to the structure of the material
-              that one is handling. One must yield to it in tiny details of
-              execution, perhaps the handling of the surface or grain, and one
-              must master it as a whole.
-              {<FaFontAwesomeFlag/>}
-            </p>
+            <div className={`grid gap-10 ${foreColumn ? 'grid-cols-4' : 'grid-cols-2' }
+        `}>
+        {
+            brand?.map(brandIcon=> <BrandIconCard 
+            key={brandIcon._id}
+            brandIcon={brandIcon}
+            /> )
+        }
+        </div>
           </div>
           <div
             className={`px-6 py-4 ${
@@ -261,16 +328,20 @@ const IconPage = () => {
             aria-labelledby="tab-label-3a"
             tabindex="-1"
           >
-            <p>
-              Even though there is no certainty that the expected results of our
-              work will manifest, we have to remain committed to our work and
-              duties; because, even if the results are slated to arrive, they
-              cannot do so without the performance of work.
-            </p>
+            <div className={`grid gap-10 ${foreColumn ? 'grid-cols-4' : 'grid-cols-2' }
+        `}>
+            {
+            classic?.map(classicIcon=> <ClassicIconCard 
+            key={classicIcon._id}
+            classicIcon={classicIcon}
+            /> )
+        }
+        </div>
           </div>
         </div>
       </section>
-      {/*<!-- End Basic lg sized tab --> */}       
+      {/*<!-- End Basic lg sized tab --> */}  
+      </div>     
     </>
     );
 };

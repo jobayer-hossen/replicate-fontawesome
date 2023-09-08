@@ -1,102 +1,102 @@
 [
     {
-      "id": 1,
-      "iconName": "Linkedin",
-      "iconLink": "https://i.ibb.co/Jx0DhdS/linkedin.png"
+      
+      "iconName": "Chat",
+      "iconLink": "https://i.ibb.co/qRXQTsC/chat.png"
     },
     {
-      "id": 2,
-      "iconName": "Google",
-      "iconLink": "https://i.ibb.co/V3gbw6J/google.png"
+     
+      "iconName": "Comment",
+      "iconLink": "https://i.ibb.co/5LLQ7B3/comment.png"
     },
     {
-      "id": 3,
-      "iconName": "Acrobat",
-      "iconLink": "https://i.ibb.co/F45vPs5/acrobat.png"
+      
+      "iconName": "Customer",
+      "iconLink": "https://i.ibb.co/6DY1y7v/customer.png"
     },
     {
-      "id": 4,
-      "iconName": "Google Map",
-      "iconLink": "https://i.ibb.co/fdN227x/map-marker.png"
+     
+      "iconName": "Customer-Review",
+      "iconLink": "https://i.ibb.co/nQX8RhX/customer-review.png"
     },
     {
-      "id": 5,
-      "iconName": "Airbnb",
-      "iconLink": "https://i.ibb.co/pv8NBhN/airbnb.png"
+      
+      "iconName": "Dissatisfied",
+      "iconLink": "https://i.ibb.co/0fv7qj9/dissatisfied.png"
     },
     {
-      "id": 6,
-      "iconName": "Apple",
-      "iconLink": "https://i.ibb.co/71zxzvj/apple.png"
+     
+      "iconName": "Favorite",
+      "iconLink": "https://i.ibb.co/Lh0RR5s/favorite.png"
     },
     {
-      "id": 7,
-      "iconName": "Behance",
-      "iconLink": "https://i.ibb.co/ryQtNSD/behance.png"
+    
+      "iconName": "Feedback",
+      "iconLink": "https://i.ibb.co/2qW95Qg/feedback.png"
     },
     {
-      "id": 8,
-      "iconName": "Bitcoin",
-      "iconLink": "https://i.ibb.co/qxDxfbx/bitcoin.png"
+      
+      "iconName": "Good-Review",
+      "iconLink": "https://i.ibb.co/26C27xM/good-review.png"
     },
     {
-      "id": 9,
-      "iconName": "Pinterest",
-      "iconLink": "https://i.ibb.co/b1pLYMQ/pinterest.png"
+      
+      "iconName": "Like",
+      "iconLink": "https://i.ibb.co/b1KwGNF/like.png"
     },
     {
-      "id": 10,
-      "iconName": "Crown",
-      "iconLink": "https://i.ibb.co/HxdtCTp/crown.png"
+      
+      "iconName": "Phone-Call",
+      "iconLink": "https://i.ibb.co/qNfxbQd/phone-call.png"
     },
     {
-      "id": 11,
-      "iconName": "Telegram",
-      "iconLink": "https://i.ibb.co/GdM35xH/telegram.png"
+      
+      "iconName": "Premium",
+      "iconLink": "https://i.ibb.co/F0K5ypw/premium.png"
     },
     {
-      "id": 12,
-      "iconName": "Discord",
-      "iconLink": "https://i.ibb.co/RTbd4tP/discord.png"
+    
+      "iconName": "Reviews",
+      "iconLink": "https://i.ibb.co/dmdZLZm/review.png"
     },
     {
-      "id": 13,
-      "iconName": "Tik-Tok",
-      "iconLink": "https://i.ibb.co/3SwKy72/tik-tok.png"
+      
+      "iconName": "Shopping-Cart",
+      "iconLink": "https://i.ibb.co/SJk28k2/shopping-cart.png"
     },
     {
-      "id": 14,
-      "iconName": "Facebook",
-      "iconLink": "https://i.ibb.co/kMRD999/facebook.png"
+      
+      "iconName": "Reviews",
+      "iconLink": "https://i.ibb.co/XSKMhw2/reviews.png"
     },
     {
-      "id": 15,
-      "iconName": "Twitter",
-      "iconLink": "https://i.ibb.co/hfnQLPP/twitter.png"
+    
+      "iconName": "Speech-Bubble",
+      "iconLink": "https://i.ibb.co/8D40Ls7/speech-bubble.png"
     },
     {
-      "id": 16,
-      "iconName": "Flame",
-      "iconLink": "https://i.ibb.co/8bVsJRt/flame.png"
+      
+      "iconName": "Statistics",
+      "iconLink": "https://i.ibb.co/6wXxLwd/statistics.png"
     },
     {
-      "id": 17,
-      "iconName": "VK",
-      "iconLink": "https://i.ibb.co/kmv495d/vk.png"
+      
+      "iconName": "Store",
+      "iconLink": "https://i.ibb.co/3MgJq5d/store.png"
     },
     {
-      "id": 18,
-      "iconName": "Github",
-      "iconLink": "https://i.ibb.co/JW1mSLb/github.png"
+
+      "iconName": "Timer",
+      "iconLink": "https://i.ibb.co/BKMDynK/timer.png"
     },
     {
-      "id": 19,
-      "iconName": "Whatsapp",
-      "iconLink": "https://i.ibb.co/LpQRPgp/whatsapp.png"
+      
+      "iconName": "Trophy",
+      "iconLink": "https://i.ibb.co/Th5pN6W/trophy.png"
     },
     {
-      "id": 20,
-      "iconName": "Iinstagram",
-      "iconLink": "https://i.ibb.co/wKDSkf0/instagram.png"
+      
+      "iconName": "Write",
+      "iconLink": "https://i.ibb.co/gj9Vx91/write.png"
     }
   ]
