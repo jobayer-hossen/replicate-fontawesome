@@ -1,11 +1,13 @@
 import React from 'react';
 import IconPage from './IconPage';
+import Learn from './Learn';
+import Price from './Price';
 
 const Home = () => {
     return (
     <>
     <div className="bg-[url('https://img.fortawesome.com/1ce05b4b/hero-icon-bg.svg')]">
-      <div className="container px-6 py-16 mx-auto text-center  ">
+      <div className="container px-6 py-7 mx-auto text-center  ">
         
         <div className="max-w-lg mx-auto bg-white">
             <h1 className="text-5xl font-semibold lg:text-4xl bg-gradient-to-r from-teal-600 via-purple-600 to-green-600 text-transparent bg-clip-text animate-gradient">Take the hassle out of icons in your <span className='text-6xl'>website.</span> </h1>
@@ -26,7 +28,9 @@ const Home = () => {
         
     </div> 
     </div> 
-    <IconPage/>    
+    <IconPage/>
+    <Learn/>  
+    <Price/>  
     </>
     );
 };

@@ -2,26 +2,31 @@ import React, { useState } from 'react';
 import { FaDownload } from "react-icons/fa";
 import { ImEnlarge } from "react-icons/im";
 import { MdZoomInMap } from "react-icons/md";
+import { AiOutlineCrown } from "react-icons/ai";
 
-const FreeIconCard = ({freeIcon}) => {
-    const { iconLink, iconName, _id } = freeIcon;
+const ProIconCard = ({proIcon}) => {
+
+    const { iconLink, iconName, category } = proIcon;
+
 
     const [state, setState] = useState(false);
 
     const handleClickOpen = () => {
         setState(true);
+        console.log('true')
     };
     const handleClose = () => {
         setState(false);
+        console.log('false')
     };
 
 
     const [large, setLarge] = useState(false)
 
-    const handleAddLarge =()=>{
+    const handleAddLarge = () => {
         setLarge(true)
     }
-    const handleRemoveLarge =()=>{
+    const handleRemoveLarge = () => {
         setLarge(false)
     }
 
@@ -49,14 +54,20 @@ const FreeIconCard = ({freeIcon}) => {
         <>
 
 
-<div onClickCapture={() => handleClickOpen(true)} className="  overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
+<div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
                 {/*  <!-- Icon --> */}
-                <figure className="p-8 pb-0">
-                    <img className='w-[40%] mx-auto' src={iconLink} alt="" />
+                <figure className="p-8 pb-0 relative ">
+                    {
+                        category && <span className="absolute right-2 top-2  inline-flex items-center justify-center gap-1 rounded bg-blue-500 px-1.5 text-white">
+                        <AiOutlineCrown className='text-yellow-500' /> <span className='text-sm'>PRO</span>
+                    </span>
+                    }
+
+                    <img className='w-[30%] mx-auto' src={iconLink} alt="" />
                 </figure>
                 {/*  <!-- Body--> */}
                 <div className="p-4">
-                    <h3 className="mb-4 font-medium text-slate-700">{iconName}</h3>
+                    <h3 className="mb-4 text-lg font-medium text-slate-700">{iconName}</h3>
                 </div>
             </div>
 
@@ -64,15 +75,23 @@ const FreeIconCard = ({freeIcon}) => {
 
             {state ? (
                 <div className="fixed inset-0 z-10  ">
-                    <div className="fixed inset-0 w-full h-full " ></div>
+                    <div className="fixed inset-0 w-full h-full" ></div>
 
-                    <div className="flex  items-center min-h-screen px-4 py-8 w-[80%] mx-auto">
-                        <div className="relative p-4 mx-auto bg-blue-50 rounded-md shadow-lg">
+                    <div className="flex items-center min-h-screen px-4 py-8 w-[80%] mx-auto">
+                        <div className="relative p-4 mx-auto bg-white rounded-md shadow-lg">
 
                             <div className="flex justify-between">
+                            <div className='flex'>
                                 <h4 className="text-2xl font-semibold text-gray-800">
                                     {iconName}
+                                    
                                 </h4>
+                                {
+                        category && <span className="ms-4 inline-flex items-center justify-center gap-1 rounded bg-blue-500 px-1.5 text-white">
+                        <AiOutlineCrown className='text-yellow-500' /> <span className='text-sm'>PRO</span>
+                    </span>
+                    }
+                                </div>
                                 <button className="p-2 text-gray-400 rounded-md hover:bg-gray-100"
                                     onClick={() => handleClose(false)}
                                 >
@@ -84,10 +103,10 @@ const FreeIconCard = ({freeIcon}) => {
                             <div className=" py-5 space-y-3 text-center">
 
                                 <div className='grid lg:grid-cols-2 sm:grid-cols-1 mt-5 mb-5'>
-                                    <div className="w-[70%]  rounded-lg border border-blue-300 mx-auto overflow-hidden p-6 pb-0 text-center bg-white  shadow-md text-slate-500 shadow-slate-200">
+                                    <div className="w-[70%] rounded-lg border border-blue-300 mx-auto overflow-hidden p-6 pb-0 text-center bg-white  shadow-md text-slate-500 shadow-slate-200">
 
                                         <figure className="p-6 pb-0">
-                                            <img className={`mx-auto p-4 mb-10 ${large? 'w-[90%]': 'w-[60%]'}`} src={iconLink} alt={iconName} />
+                                            <img className={`mx-auto p-4 mb-10 ${large ? 'w-[90%]' : 'w-[60%]'}`} src={iconLink} alt={iconName} />
                                         </figure>
                                     </div>
 
@@ -132,9 +151,8 @@ const FreeIconCard = ({freeIcon}) => {
 
 
 
-
         </>
     );
 };
 
-export default FreeIconCard;
+export default ProIconCard;
