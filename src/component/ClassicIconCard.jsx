@@ -52,7 +52,7 @@ const ClassicIconCard = ({ classicIcon }) => {
     return (
         <>
 
-            <div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
+<div onClickCapture={() => handleClickOpen(true)} className="  overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer transition duration-150 ease-in-out hover:scale-105">
                 {/*  <!-- Icon --> */}
                 <figure className="p-8 pb-0 relative ">
                     {

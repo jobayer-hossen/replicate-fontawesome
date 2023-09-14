@@ -54,11 +54,11 @@ const ProIconCard = ({proIcon}) => {
         <>
 
 
-<div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer">
+<div onClickCapture={() => handleClickOpen(true)} className="overflow-hidden text-center bg-white rounded-md shadow-md text-slate-500 shadow-slate-200 hover:bg-yellow-300 w-[95%] cursor-pointer transition duration-150 ease-in-out hover:scale-105">
                 {/*  <!-- Icon --> */}
                 <figure className="p-8 pb-0 relative ">
                     {
-                        category && <span className="absolute right-2 top-2  inline-flex items-center justify-center gap-1 rounded bg-blue-500 px-1.5 text-white">
+                        category && <span className=" absolute right-2 top-2  inline-flex items-center justify-center gap-1 rounded bg-blue-500 px-1.5 text-white">
                         <AiOutlineCrown className='text-yellow-500' /> <span className='text-sm'>PRO</span>
                     </span>
                     }
